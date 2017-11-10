@@ -1,0 +1,4 @@
+﻿  TestScene.cpp
+c:\users\백승훈\desktop\runaway\project_runaway\runaway\testscene.cpp(34): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Runaway.vcxproj -> C:\Users\백승훈\Desktop\Runaway\Project_Runaway\Debug\Runaway.exe
+  Runaway.vcxproj -> C:\Users\백승훈\Desktop\Runaway\Project_Runaway\Debug\Runaway.pdb (Partial PDB)

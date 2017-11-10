@@ -1,0 +1,4 @@
+3. 텍스트 구현하기
+4. Transparency
+
+5. Basic Shading, Lighting, Shadowing, 노말 매핑

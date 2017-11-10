@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{1e2102ae-2ff6-4bb1-9b57-9bd7a865fbaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Manager">
+      <UniqueIdentifier>{0ae38d54-d2d8-46fc-96bc-068eeb5f65fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\OpenGL">
+      <UniqueIdentifier>{4b88f67b-ed90-444a-847d-f59f9914fab7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\GLClass">
+      <UniqueIdentifier>{9be2cfc0-f09d-410b-9693-41e887b21a3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Shader">
+      <UniqueIdentifier>{d622ae67-fd53-45ed-b806-1a62dcd497cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Math">
+      <UniqueIdentifier>{e1e60e8e-0a6e-460f-803d-785141a278ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Object">
+      <UniqueIdentifier>{952836a5-49e8-445c-be85-11b6241ac952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestObjectScene">
+      <UniqueIdentifier>{14d41109-802e-4182-8c05-f0fcfc9400c3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Runaway.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowManager.h">
+      <Filter>Framework\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageManager.h">
+      <Filter>Framework\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>Framework\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicManager.h">
+      <Filter>Framework\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="RUNAMath.h">
+      <Filter>Framework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Framework\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Framework\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ogl.h">
+      <Filter>Framework\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Framework\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="GLShader.h">
+      <Filter>Framework\GLClass</Filter>
+    </ClInclude>
+    <ClInclude Include="GLProgram.h">
+      <Filter>Framework\GLClass</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScene.h">
+      <Filter>TestObjectScene</Filter>
+    </ClInclude>
+    <ClInclude Include="TestObject.h">
+      <Filter>TestObjectScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Framework\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScene2.h">
+      <Filter>TestObjectScene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Framework\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="PNGLoader.h">
+      <Filter>Framework\GLClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Framework\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="EmptyObject.h">
+      <Filter>TestObjectScene</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Framework\Object</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MessageManager.cpp">
+      <Filter>Framework\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>Framework\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowManager.cpp">
+      <Filter>Framework\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicManager.cpp">
+      <Filter>Framework\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Framework\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Framework\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ogl.cpp">
+      <Filter>Framework\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Framework\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="GLShader.cpp">
+      <Filter>Framework\GLClass</Filter>
+    </ClCompile>
+    <ClCompile Include="GLProgram.cpp">
+      <Filter>Framework\GLClass</Filter>
+    </ClCompile>
+    <ClCompile Include="RUNAMath.cpp">
+      <Filter>Framework\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="TestObject.cpp">
+      <Filter>TestObjectScene</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScene.cpp">
+      <Filter>TestObjectScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Framework\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScene2.cpp">
+      <Filter>TestObjectScene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Framework\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="PNGLoader.cpp">
+      <Filter>Framework\GLClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Framework\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="EmptyObject.cpp">
+      <Filter>TestObjectScene</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Framework\Object</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="VertDraw.vert">
+      <Filter>Framework\Shader</Filter>
+    </None>
+    <None Include="VertDraw.frag">
+      <Filter>Framework\Shader</Filter>
+    </None>
+    <None Include="UIDraw.frag">
+      <Filter>Framework\Shader</Filter>
+    </None>
+    <None Include="UIDraw.vert">
+      <Filter>Framework\Shader</Filter>
+    </None>
+  </ItemGroup>
+</Project>
