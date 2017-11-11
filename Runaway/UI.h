@@ -1,6 +1,8 @@
 #pragma once
 #include "stdafx.h"
 #include "RUNAMath.h"
+
+//UI의 위치는 변경될 일이 없다고 가정하고 구현함
 class UI
 {
 public: 

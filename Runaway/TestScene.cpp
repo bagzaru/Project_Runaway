@@ -4,6 +4,7 @@
 
 TestScene::TestScene()
 {
+	sceneNumber = NGameScene;
 	RUNAMM->deltaTime; //이거 델타타임변수
 
 	testModel1 = new Model("Mingeu.obj", "Mingeu.png");

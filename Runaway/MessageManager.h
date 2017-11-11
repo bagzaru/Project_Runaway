@@ -23,8 +23,11 @@ public:
 public:
 	//키입력 처리
 	bool lkey[256], rkey[256];
+	bool mouseLClicked=false;
+	bool mouseRClicked=false;
 	void UpdateKeyState();
 	int GetMyKeyState(int vk);
+	int GetMyMouseState(int mouseLR);
 
 public:
 	//시간 처리
@@ -43,6 +46,9 @@ public:
 		return &instance;
 	}
 
+	
+	void CloseMyWindow();
+
 private:	
 	static MessageMap messageMap[];
 	static LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam);
@@ -57,15 +63,12 @@ private:
 	void OnSysCommand(WPARAM wParam, LPARAM lParam);
 	void OnCommand(WPARAM wParam, LPARAM lParam) {}
 	void OnKeyUp(WPARAM wParam, LPARAM lParam) {}
-	void OnLButtonDown(WPARAM wParam, LPARAM lParam) {
-	}
-	void OnLButtonUp(WPARAM wParam, LPARAM lParam) {
-	}
 	void OnMouseMove(WPARAM wParam, LPARAM lParam);
 	void OnMouseLeave(WPARAM wParam, LPARAM lParam);
-	void OnRButtonDown(WPARAM wParam, LPARAM lParam) {}
-	void OnRButtonUp(WPARAM wParam, LPARAM lParam) {
-	}
+	void OnLButtonDown(WPARAM wParam, LPARAM lParam);
+	void OnLButtonUp(WPARAM wParam, LPARAM lParam);
+	void OnRButtonDown(WPARAM wParam, LPARAM lParam);
+	void OnRButtonUp(WPARAM wParam, LPARAM lParam);
 	void OnChar(WPARAM wParam, LPARAM lParam) {}
 	void OnSetFocus(WPARAM wParam, LPARAM lParam);
 };

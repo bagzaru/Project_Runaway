@@ -32,6 +32,7 @@ void MessageManager::UpdateKeyState()
 		lkey[i] = rkey[i];
 		rkey[i] = GetAsyncKeyState(i) & 0x8000;
 	}
+	
 }
 
 int MessageManager::GetMyKeyState(int vk)
@@ -39,6 +40,11 @@ int MessageManager::GetMyKeyState(int vk)
 	if (lkey[vk] && rkey[vk]) return 2; //아까도 눌렀었고 지금도 눌러져있을 때
 	if (!lkey[vk] && rkey[vk]) return 1; //아까는 아니지만 지금은 눌려있을때
 	if (lkey[vk] && !rkey[vk]) return -1; //누르다 땠을때
+	return 0;
+}
+
+int MessageManager::GetMyMouseState(int mouseLR)
+{
 	return 0;
 }
 
@@ -67,6 +73,12 @@ void MessageManager::UpdateFPS()
 
 
 	lastTime = curTime;
+}
+
+void MessageManager::CloseMyWindow()
+{
+	RUNAGLM->DestroyScene();
+	SendMessage(RUNAWM->mHWnd, WM_CLOSE, 0, 0);
 }
 
 LRESULT MessageManager::WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
@@ -109,7 +121,7 @@ void MessageManager::OnKeyDown(WPARAM wParam, LPARAM lParam)
 
 	if (wParam == VK_ESCAPE)
 	{
-		SendMessage(RUNAWM->mHWnd, WM_CLOSE, 0, 0);
+		CloseMyWindow();
 	}
 }
 
@@ -124,56 +136,81 @@ void MessageManager::OnSysCommand(WPARAM wParam, LPARAM lParam)
 }
 
 void MessageManager::OnMouseMove(WPARAM wParam, LPARAM lParam)
-{	
+{
 	mouseX = GET_X_LPARAM(lParam);
 	mouseY = GET_Y_LPARAM(lParam);
-	if (mouseX < CM->movePoint) {
-		//(800x600)기준
-		//100보다 작으면 : 700-(movePoint-mouseX)로 이동
-		//예전 좌표에도 800-movePoint*2 (=600)만큼 더해줌
-		mouseX = CM->screenWidth - CM->movePoint - (CM->movePoint - mouseX);
-		CM->oldMouseX += CM->screenWidth - CM->movePoint * 2;
-		SetCursorPos(mouseX, mouseY);
-	}
-	else if (mouseX > CM->screenWidth - CM->movePoint) {
-		//700보다 크면 : movePoint + (mouseX-width-movePoint) (=100)으로 이동
-		//예전 좌표에도 800-movePoint*2 (=600)만큼 빼줌
-		mouseX -= CM->screenWidth - CM->movePoint*2;
-		CM->oldMouseX -= CM->screenWidth - CM->movePoint * 2;
-		//SetCursorPos(mouseX, mouseY);
+	if (RUNASCENEM->currentScene->sceneNumber == Scene::NMainScene) {
 
-		//창모드일 때만 오른쪽, 아래로 넘어갈 때 마우스 위치 -4~10정도 떨어지는 버그 발생
-		//테두리 때문인 것 같음.. 2017.10.24
-		if (RUNAWM->mFullScreen)
+	}
+	if (RUNASCENEM->currentScene->sceneNumber == Scene::NGameScene) {
+		if (mouseX < CM->movePoint) {
+			//(800x600)기준
+			//100보다 작으면 : 700-(movePoint-mouseX)로 이동
+			//예전 좌표에도 800-movePoint*2 (=600)만큼 더해줌
+			mouseX = CM->screenWidth - CM->movePoint - (CM->movePoint - mouseX);
+			CM->oldMouseX += CM->screenWidth - CM->movePoint * 2;
 			SetCursorPos(mouseX, mouseY);
-		else
-			SetCursorPos(mouseX + 10, mouseY);
-	}
+		}
+		else if (mouseX > CM->screenWidth - CM->movePoint) {
+			//700보다 크면 : movePoint + (mouseX-width-movePoint) (=100)으로 이동
+			//예전 좌표에도 800-movePoint*2 (=600)만큼 빼줌
+			mouseX -= CM->screenWidth - CM->movePoint * 2;
+			CM->oldMouseX -= CM->screenWidth - CM->movePoint * 2;
+			//SetCursorPos(mouseX, mouseY);
 
-	if (mouseY < CM->movePoint) {
-		mouseY = CM->screenHeight - CM->movePoint - (CM->movePoint - mouseY);
-		CM->oldMouseY += CM->screenHeight - CM->movePoint * 2;
-		SetCursorPos(mouseX, mouseY);
-	}
-	else if (mouseY > CM->screenHeight - CM->movePoint) {
-		mouseY = CM->movePoint + (mouseY - CM->screenHeight + CM->movePoint);
-		CM->oldMouseY -= CM->screenHeight - CM->movePoint * 2;
+			//창모드일 때만 오른쪽, 아래로 넘어갈 때 마우스 위치 -4~10정도 떨어지는 버그 발생
+			//테두리 때문인 것 같음.. 2017.10.24
+			if (RUNAWM->mFullScreen)
+				SetCursorPos(mouseX, mouseY);
+			else
+				SetCursorPos(mouseX + 10, mouseY);
+		}
 
-		//창모드일 때만 오른쪽, 아래로 넘어갈 때 마우스 위치 -4~10정도 떨어지는 버그 발생
-		//테두리 때문인 것 같음... 2017.10.24
-		if (RUNAWM->mFullScreen)
+		if (mouseY < CM->movePoint) {
+			mouseY = CM->screenHeight - CM->movePoint - (CM->movePoint - mouseY);
+			CM->oldMouseY += CM->screenHeight - CM->movePoint * 2;
 			SetCursorPos(mouseX, mouseY);
-		else
-			SetCursorPos(mouseX, mouseY+20);
+		}
+		else if (mouseY > CM->screenHeight - CM->movePoint) {
+			mouseY = CM->movePoint + (mouseY - CM->screenHeight + CM->movePoint);
+			CM->oldMouseY -= CM->screenHeight - CM->movePoint * 2;
+
+			//창모드일 때만 오른쪽, 아래로 넘어갈 때 마우스 위치 -4~10정도 떨어지는 버그 발생
+			//테두리 때문인 것 같음... 2017.10.24
+			if (RUNAWM->mFullScreen)
+				SetCursorPos(mouseX, mouseY);
+			else
+				SetCursorPos(mouseX, mouseY + 20);
+		}
+
+
+		CM->FPSCameraRot(mouseX, mouseY);
 	}
-
-
-	CM->FPSCameraRot(mouseX, mouseY);
 }
 
 void MessageManager::OnMouseLeave(WPARAM wParam, LPARAM lParam)
 {
 
+}
+
+void MessageManager::OnLButtonDown(WPARAM wParam, LPARAM lParam)
+{
+	mouseLClicked = true;
+}
+
+void MessageManager::OnLButtonUp(WPARAM wParam, LPARAM lParam)
+{
+	mouseLClicked = false;
+}
+
+void MessageManager::OnRButtonDown(WPARAM wParam, LPARAM lParam)
+{
+	mouseRClicked = true;
+}
+
+void MessageManager::OnRButtonUp(WPARAM wParam, LPARAM lParam)
+{
+	mouseRClicked = false;
 }
 
 void MessageManager::OnSetFocus(WPARAM wParam, LPARAM lParam)

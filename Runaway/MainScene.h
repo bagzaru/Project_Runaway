@@ -1,19 +1,17 @@
 #pragma once
 #include "Scene.h"
-#include "UI.h"
+#include "Button.h"
 #include "EmptyObject.h"
+
 class MainScene :
 	public Scene
 {
-
-	Model* testModel1;
-	EmptyObject* et;
-	UI* mainLogo;
-	UI* gameStartButton;
-	UI* myCollectionButton;
-	UI* rankButton;
-	UI* howToPlayButton;
-	UI* exitButton;
+	Button* mainLogo;
+	Button* gameStartButton;
+	Button* myCollectionButton;
+	Button* rankButton;
+	Button* howToPlayButton;
+	Button* exitButton;
 public:
 	MainScene();
 	~MainScene();

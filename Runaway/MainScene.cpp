@@ -4,14 +4,15 @@
 
 MainScene::MainScene()
 {
-	mainLogo = new UI("gg.png", 100, 100);
-	gameStartButton = new UI("Resource/UI/GameStart.png", 512, 200);
-	myCollectionButton = new UI("Resource/UI/Collection.png", 512, 300);
-	rankButton = new UI("Resource/UI/Rank.png", 512, 400);
-	howToPlayButton = new UI("Resource/UI/h2p.png", 512, 500);
-	exitButton = new UI("Resource/UI/gg.png", 512, 600);
+	sceneNumber = NMainScene;
+	//mainLogo = new UI("gg.png", 100, 100);
+	gameStartButton = new Button("Resource/UI/GameStart.png", CM->screenWidth / 2 - 100, 450,Button::startb);
+	myCollectionButton = new Button("Resource/UI/Collection.png", CM->screenWidth / 2 - 100, 340, Button::collectionb);
+	rankButton = new Button("Resource/UI/Rank.png", CM->screenWidth / 2 - 100, 230, Button::rankb);
+	howToPlayButton = new Button("Resource/UI/h2p.png", CM->screenWidth / 2 - 100, 120, Button::howtoplayb);
+	exitButton = new Button("Resource/UI/exit.png", CM->screenWidth / 2 - 100, 10, Button::exitb);
 
-	PushBackUI(mainLogo);
+	//PushBackUI(mainLogo);
 	PushBackUI(gameStartButton);
 	PushBackUI(myCollectionButton);
 	PushBackUI(rankButton);
@@ -23,4 +24,5 @@ MainScene::MainScene()
 
 MainScene::~MainScene()
 {
+
 }

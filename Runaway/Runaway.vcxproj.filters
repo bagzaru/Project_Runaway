@@ -25,6 +25,9 @@
     <Filter Include="TestObjectScene">
       <UniqueIdentifier>{14d41109-802e-4182-8c05-f0fcfc9400c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MainScene">
+      <UniqueIdentifier>{cdbcad2a-f1ec-4c63-bd0b-feb77d830a03}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Runaway.h">
@@ -90,7 +93,12 @@
     <ClInclude Include="UI.h">
       <Filter>Framework\Object</Filter>
     </ClInclude>
-    <ClInclude Include="MainScene.h" />
+    <ClInclude Include="MainScene.h">
+      <Filter>MainScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>MainScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -154,7 +162,12 @@
     <ClCompile Include="UI.cpp">
       <Filter>Framework\Object</Filter>
     </ClCompile>
-    <ClCompile Include="MainScene.cpp" />
+    <ClCompile Include="MainScene.cpp">
+      <Filter>MainScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>MainScene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="VertDraw.vert">

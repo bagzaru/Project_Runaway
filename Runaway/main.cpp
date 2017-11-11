@@ -13,5 +13,5 @@ int main() {
 	}
 	else
 		return 0;
-	RUNAGLM->DestroyScene();
+	//프로그램 종료시 처리는 RUNAMM->CloseMyWindow()
 }

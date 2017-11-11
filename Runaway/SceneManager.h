@@ -6,6 +6,8 @@ class Scene;
 
 class SceneManager
 {
+public:
+	
 private:
 	
 	Scene* nextScene;

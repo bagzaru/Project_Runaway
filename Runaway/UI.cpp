@@ -34,6 +34,7 @@ bool UI::LoadUI(const char * path)
 	glGenBuffers(1, &uvBuffer);
 
 
+	//UI 포지션이 수정될 일이 없으므로 값을 처음에 지정해버린다
 	Vec2 ul = Vec2(pos.x, pos.y + textureHeight);
 	Vec2 ur = Vec2(pos.x + textureWidth, pos.y + textureHeight);
 	Vec2 dr = Vec2(pos.x + textureWidth, pos.y);
