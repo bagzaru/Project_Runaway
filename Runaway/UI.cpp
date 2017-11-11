@@ -19,10 +19,16 @@ UI::~UI()
 
 bool UI::LoadUI(const char * path)
 {
+
 	textureID = LoadPNG(path);
 	if (textureID == -1) {
 		return false;
 	}
+	
+	glGenVertexArrays(1, &vertexArrayID);					//n개의 정점(vertex) 배열 객체 이름을 배열로 반환
+	glBindVertexArray(vertexArrayID);						//정점(vertex) 배열 객체를 name 배열로 바인딩
+
+
 
 	glGenBuffers(1, &vertexBuffer);
 	glGenBuffers(1, &uvBuffer);

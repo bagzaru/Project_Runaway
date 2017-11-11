@@ -7,6 +7,7 @@ public:
 	Vec2 pos;
 	
 public:
+	GLuint vertexArrayID;
 	GLuint textureID;
 	GLuint vertexBuffer;
 	GLuint uvBuffer;

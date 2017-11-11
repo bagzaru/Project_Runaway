@@ -160,17 +160,17 @@ void GraphicManager::PrepareRender()
 	mProgram = new GLProgram();
 	mVertSh = new GLShader(GL_VERTEX_SHADER);
 	mTextureSh = new GLShader(GL_FRAGMENT_SHADER);
-		
+
 	mUIProgram = new GLProgram();
 	mUIVertSh = new GLShader(GL_VERTEX_SHADER);
 	mUITextureSh = new GLShader(GL_FRAGMENT_SHADER);
 
 	mVertSh->Load(L"VertDraw.vert");		//코드를 로드함
-	mTextureSh->Load(L"VertDraw.frag");	
+	mTextureSh->Load(L"VertDraw.frag");
 	mVertSh->Compile();				//로드한 코드를 컴파일함
-	mTextureSh->Compile();	
+	mTextureSh->Compile();
 	mProgram->AttachShader(mVertSh);	//쉐이더를 등록함
-	mProgram->AttachShader(mTextureSh);	
+	mProgram->AttachShader(mTextureSh);
 	mProgram->Link();							//쉐이더에 따라 프로그램 객체를 연결함
 
 	mUITextureSh->Load(L"UIDraw.frag");
@@ -215,19 +215,19 @@ void GraphicManager::DrawScene()
 		if (i->useModel)
 		{
 			int ck = 0;
-			
-			
+
+
 			//Mat4 Model = Mat4(1.0f);
 			Mat4 tr = Translate(i->pos.x, i->pos.y, i->pos.z);
 			Mat4 sc = Scale(i->scale.x, i->scale.y, i->scale.z);
 			Mat4 rt = RotateXYZ(i->rot.x, i->rot.y, i->rot.z);
 			Mat4 modelMat = sc*(rt*(tr*CM->View));
-			
+
 			mvp = (modelMat)*CM->Projection;
-			glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &mvp.v[0].x); 
+			glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &mvp.v[0].x);
 			glActiveTexture(GL_TEXTURE0);
-			glBindTexture(GL_TEXTURE_2D, i->myModel->textureID); 
-			glUniform1i(textureUniformID, 0); 
+			glBindTexture(GL_TEXTURE_2D, i->myModel->textureID);
+			glUniform1i(textureUniformID, 0);
 			// 버텍스 버퍼 가져옴
 			glEnableVertexAttribArray(0);
 			glBindBuffer(GL_ARRAY_BUFFER, i->myModel->vertexBuffer);
@@ -243,24 +243,24 @@ void GraphicManager::DrawScene()
 			glEnableVertexAttribArray(1);
 			glBindBuffer(GL_ARRAY_BUFFER, i->myModel->uvBuffer);
 			glVertexAttribPointer(
-				1,                                
-				2,                                
-				GL_FLOAT,                         
-				GL_FALSE,                         
-				0,                                
-				(void*)0                          
+				1,
+				2,
+				GL_FLOAT,
+				GL_FALSE,
+				0,
+				(void*)0
 			);
 			//빛, 재질을 구현하기 위한 노말버퍼
 			//2017-11-04 v0.12 현재 사용되지 않음
 			glEnableVertexAttribArray(2);
 			glBindBuffer(GL_ARRAY_BUFFER, i->myModel->normalBuffer);
 			glVertexAttribPointer(
-				2,                                
-				3,                                
-				GL_FLOAT,                         
-				GL_FALSE,                         
-				0,                                
-				(void*)0                          
+				2,
+				3,
+				GL_FLOAT,
+				GL_FALSE,
+				0,
+				(void*)0
 			);
 
 			// 인덱싱된 버퍼
@@ -270,24 +270,21 @@ void GraphicManager::DrawScene()
 				GL_TRIANGLES,      // 어떻게 그릴지
 				i->myModel->indices.size(),    // 크기
 				GL_UNSIGNED_SHORT,   // 타입
-				(void*)0           
-			);			
+				(void*)0
+			);
 
 		}
-	}	
-	
-	for (auto &i : RUNASCENEM->currentScene->modelList)
-	{
-		glDisableVertexAttribArray(i->vertexBuffer);
-		glDisableVertexAttribArray(i->uvBuffer);
-		glDisableVertexAttribArray(i->normalBuffer);
 	}
-	
+
+
+	glDisableVertexAttribArray(0);
+	glDisableVertexAttribArray(1);
+	glDisableVertexAttribArray(2);
 	//UI들
 	mUIProgram->Use();
 	for (auto &i : RUNASCENEM->currentScene->uiList) {
 		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE0, i->textureID);
+		glBindTexture(GL_TEXTURE_2D, i->textureID);
 		glUniform1i(uiUniformID, 0);
 
 		glEnableVertexAttribArray(0);

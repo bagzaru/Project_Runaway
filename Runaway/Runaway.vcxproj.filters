@@ -90,6 +90,7 @@
     <ClInclude Include="UI.h">
       <Filter>Framework\Object</Filter>
     </ClInclude>
+    <ClInclude Include="MainScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -153,6 +154,7 @@
     <ClCompile Include="UI.cpp">
       <Filter>Framework\Object</Filter>
     </ClCompile>
+    <ClCompile Include="MainScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="VertDraw.vert">

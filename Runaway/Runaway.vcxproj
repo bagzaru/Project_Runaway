@@ -146,6 +146,7 @@
     <ClInclude Include="GLProgram.h" />
     <ClInclude Include="GLShader.h" />
     <ClInclude Include="GraphicManager.h" />
+    <ClInclude Include="MainScene.h" />
     <ClInclude Include="MessageManager.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="ObjectManager.h" />
@@ -170,6 +171,7 @@
     <ClCompile Include="GLShader.cpp" />
     <ClCompile Include="GraphicManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="MessageManager.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
