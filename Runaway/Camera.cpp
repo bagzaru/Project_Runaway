@@ -57,7 +57,6 @@ void Camera::FPSCameraRotY(int mouseY)
 	look.y = -tan(rot.y);
 
 	oldMouseY = mouseY;
-	printf("roty: %f\n", rot.y);
 }
 
 void Camera::FPSCameraRot(int mouseX, int mouseY)
@@ -82,7 +81,7 @@ void Camera::FPSCameraRot(int mouseX, int mouseY)
 	oldMouseX = mouseX;
 	oldMouseY = mouseY;
 	//printf("pos + look == %f %f %f\n", pos.x + look.x, pos.y + look.y, pos.z + look.z);
-	printf("lx : %.4f, ly : %.4f, lz : %.4f\n",look.x,look.y,look.z);
+	//printf("lx : %.4f, ly : %.4f, lz : %.4f\n",look.x,look.y,look.z);
 }
 
 void Camera::CalculAngleLR(int isRight)

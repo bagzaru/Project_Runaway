@@ -9,8 +9,8 @@ public:
 
 	void Update();
 
-	float speed = 10.0f;
-	float lrspeed = 10.0f;
+	float speed = 30.0f;
+	float lrspeed = 20.0f;
 	int hp = 10;
 	int maxhp = 10;
 	int mp = 10;

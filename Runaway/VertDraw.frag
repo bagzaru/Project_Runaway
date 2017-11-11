@@ -9,6 +9,6 @@ out vec3 color;
 uniform sampler2D myTexture;
 
 void main(){
-	//내보낼 color값을 만듭니다. gl이 처리할 것입니다.
+	//내보낼 color값으로 gl이 처리할 것입니다.
 	color = texture(myTexture, UV).rgb;
 }

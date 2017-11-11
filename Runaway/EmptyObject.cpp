@@ -15,14 +15,6 @@ EmptyObject::~EmptyObject()
 }
 
 void EmptyObject::Update() {
-	++k;
-	if (k%1000==0)
-		printf("%d\n",k);
-	if (k > 100000)
-	{
-		printf("¾À º¯°æ!!\n");
-		TestScene2* a = new TestScene2();
-		RUNASCENEM->ChangeScene(a);
-	}
+	
 
 }

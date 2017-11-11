@@ -40,6 +40,6 @@ void Player::MoveFB(int wtg)
 
 void Player::MoveLR(int wtg)
 {
-	pos.x += speed*wtg*RUNAMM->deltaTime;
+	pos.x += lrspeed*wtg*RUNAMM->deltaTime;
 }
 

@@ -31,8 +31,11 @@
     <Filter Include="GameScene">
       <UniqueIdentifier>{5cab2489-62d0-416a-9059-2ce75b24bb1b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameScene\GameObject">
+    <Filter Include="GameScene\Board">
       <UniqueIdentifier>{7c470f1b-43be-4e67-b953-712e88b67f6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameScene\Player">
+      <UniqueIdentifier>{5ced3fbb-5366-4e7f-8bbb-adbcbf176869}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -93,9 +96,6 @@
     <ClInclude Include="Scene.h">
       <Filter>Framework\Object</Filter>
     </ClInclude>
-    <ClInclude Include="EmptyObject.h">
-      <Filter>TestObjectScene</Filter>
-    </ClInclude>
     <ClInclude Include="UI.h">
       <Filter>Framework\Object</Filter>
     </ClInclude>
@@ -108,11 +108,14 @@
     <ClInclude Include="GameScene.h">
       <Filter>GameScene</Filter>
     </ClInclude>
-    <ClInclude Include="BoardManger.h">
-      <Filter>GameScene\GameObject</Filter>
+    <ClInclude Include="EmptyObject.h">
+      <Filter>GameScene\Board</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>GameScene</Filter>
+      <Filter>GameScene\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="BoardManager.h">
+      <Filter>GameScene\Board</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -171,9 +174,6 @@
     <ClCompile Include="Scene.cpp">
       <Filter>Framework\Object</Filter>
     </ClCompile>
-    <ClCompile Include="EmptyObject.cpp">
-      <Filter>TestObjectScene</Filter>
-    </ClCompile>
     <ClCompile Include="UI.cpp">
       <Filter>Framework\Object</Filter>
     </ClCompile>
@@ -186,11 +186,14 @@
     <ClCompile Include="GameScene.cpp">
       <Filter>GameScene</Filter>
     </ClCompile>
-    <ClCompile Include="BoardManger.cpp">
-      <Filter>GameScene\GameObject</Filter>
+    <ClCompile Include="EmptyObject.cpp">
+      <Filter>GameScene\Board</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>GameScene</Filter>
+      <Filter>GameScene\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardManager.cpp">
+      <Filter>GameScene\Board</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
