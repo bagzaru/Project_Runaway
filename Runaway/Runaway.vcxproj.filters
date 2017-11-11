@@ -28,6 +28,12 @@
     <Filter Include="MainScene">
       <UniqueIdentifier>{cdbcad2a-f1ec-4c63-bd0b-feb77d830a03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameScene">
+      <UniqueIdentifier>{5cab2489-62d0-416a-9059-2ce75b24bb1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameScene\GameObject">
+      <UniqueIdentifier>{7c470f1b-43be-4e67-b953-712e88b67f6f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Runaway.h">
@@ -99,6 +105,15 @@
     <ClInclude Include="Button.h">
       <Filter>MainScene</Filter>
     </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="BoardManger.h">
+      <Filter>GameScene\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>GameScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -167,6 +182,15 @@
     </ClCompile>
     <ClCompile Include="Button.cpp">
       <Filter>MainScene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardManger.cpp">
+      <Filter>GameScene\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>GameScene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

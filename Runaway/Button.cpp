@@ -4,6 +4,7 @@
 #include "MessageManager.h"
 #include "TestScene.h"
 #include "SceneManager.h"
+#include "GameScene.h"
 
 
 Button::Button(const char* pngPath, int x, int y, Buttons MyCase) : UI(pngPath,x,y), useButton(true), myCase(MyCase)
@@ -21,7 +22,7 @@ void Button::Update()
 	if (RUNAMM->mouseLClicked&&CollisionCheck()) {
 		switch (myCase) {
 		case startb:
-			RUNASCENEM->ChangeScene(new TestScene());
+			RUNASCENEM->ChangeScene(new GameScene());
 			break;
 		case collectionb:
 			//컬렉션창

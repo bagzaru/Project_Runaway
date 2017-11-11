@@ -140,10 +140,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BoardManger.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="EmptyObject.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameScene.h" />
     <ClInclude Include="GLProgram.h" />
     <ClInclude Include="GLShader.h" />
     <ClInclude Include="GraphicManager.h" />
@@ -152,6 +154,7 @@
     <ClInclude Include="Model.h" />
     <ClInclude Include="ObjectManager.h" />
     <ClInclude Include="ogl.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="PNGLoader.h" />
     <ClInclude Include="RUNAMath.h" />
     <ClInclude Include="Scene.h" />
@@ -165,10 +168,12 @@
     <ClInclude Include="Runaway.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BoardManger.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="EmptyObject.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GLProgram.cpp" />
     <ClCompile Include="GLShader.cpp" />
     <ClCompile Include="GraphicManager.cpp" />
@@ -178,6 +183,7 @@
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="ogl.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="PNGLoader.cpp" />
     <ClCompile Include="RUNAMath.cpp" />
     <ClCompile Include="Scene.cpp" />

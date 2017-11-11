@@ -56,6 +56,7 @@ public:
 	int movePoint = 100; //마우스 움직임 범위
 
 	void FPSCameraMove() {};
+	void FPSCameraRotY(int mouseY);
 	void FPSCameraRot(int mouseX, int mouseY);
 
 	void CalculAngleLR(int isRight);

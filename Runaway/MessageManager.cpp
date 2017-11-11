@@ -140,7 +140,7 @@ void MessageManager::OnMouseMove(WPARAM wParam, LPARAM lParam)
 	mouseX = GET_X_LPARAM(lParam);
 	mouseY = GET_Y_LPARAM(lParam);
 	if (RUNASCENEM->currentScene->sceneNumber == Scene::NMainScene) {
-
+		CM->FPSCameraRot(mouseX, mouseY);
 	}
 	if (RUNASCENEM->currentScene->sceneNumber == Scene::NGameScene) {
 		if (mouseX < CM->movePoint) {
@@ -184,7 +184,8 @@ void MessageManager::OnMouseMove(WPARAM wParam, LPARAM lParam)
 		}
 
 
-		CM->FPSCameraRot(mouseX, mouseY);
+		//CM->FPSCameraRot(mouseX, mouseY);
+		CM->FPSCameraRotY(mouseY);
 	}
 }
 

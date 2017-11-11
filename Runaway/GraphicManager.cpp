@@ -21,7 +21,7 @@ GraphicManager::~GraphicManager()
 BOOL GraphicManager::GLInit33()
 {
 	glShadeModel(GL_SMOOTH);
-	glClearColor(0.3f, 0.3f, 0.3f, 1.0f);
+	glClearColor(0.05f, 0.06f, 0.12f, 1.0f);
 	glClearDepth(1.0f);
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LEQUAL);
