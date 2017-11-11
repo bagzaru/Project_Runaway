@@ -37,6 +37,9 @@
     <Filter Include="GameScene\Player">
       <UniqueIdentifier>{5ced3fbb-5366-4e7f-8bbb-adbcbf176869}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameScene\Stars">
+      <UniqueIdentifier>{80dea33b-9137-43d8-b4f6-e71bdc02fe07}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Runaway.h">
@@ -117,6 +120,9 @@
     <ClInclude Include="BoardManager.h">
       <Filter>GameScene\Board</Filter>
     </ClInclude>
+    <ClInclude Include="StarManager.h">
+      <Filter>GameScene\Stars</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -194,6 +200,9 @@
     </ClCompile>
     <ClCompile Include="BoardManager.cpp">
       <Filter>GameScene\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="StarManager.cpp">
+      <Filter>GameScene\Stars</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

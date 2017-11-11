@@ -19,6 +19,16 @@ MainScene::MainScene()
 	PushBackUI(howToPlayButton);
 	PushBackUI(exitButton);
 
+	whiteStar = new Model("Resource/Model/WhiteCube/Star.obj", "Resource/Model/WhiteCube/Star.png");
+	bgStars = new StarManager();
+	bgStars->p = NULL;
+	PushBackGameObject(bgStars);
+	for (int j = 0; j < bgStars->starcount; j++) {
+		bgStars->stars[j] = new GameObject(whiteStar);
+		bgStars->SetRandomPos(j);
+		PushBackGameObject(bgStars->stars[j]);
+	}
+
 }
 
 

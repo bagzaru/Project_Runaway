@@ -2,6 +2,7 @@
 #include "Scene.h"
 #include "Button.h"
 #include "EmptyObject.h"
+#include "StarManager.h"
 
 class MainScene :
 	public Scene
@@ -12,6 +13,10 @@ class MainScene :
 	Button* rankButton;
 	Button* howToPlayButton;
 	Button* exitButton;
+
+
+	StarManager* bgStars;
+	Model* whiteStar;
 public:
 	MainScene();
 	~MainScene();
