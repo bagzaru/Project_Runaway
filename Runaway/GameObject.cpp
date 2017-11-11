@@ -2,7 +2,7 @@
 #include "GameObject.h"
 #include "SceneManager.h"
 
-GameObject::GameObject() : useModel(false), myModel(NULL), pos(0.0f, 0.0f, 0.0f), rot(0.0f, 0.0f, 0.0f),scale(1.0f,1.0f,1.0f), isDestroyed(false)
+GameObject::GameObject() :  useModel(false), myModel(NULL), pos(0.0f, 0.0f, 0.0f), rot(0.0f, 0.0f, 0.0f),scale(1.0f,1.0f,1.0f), isDestroyed(false)
 {
 	//¸ðµ¨¾ø´Â »ý¼ºÀÚ
 	printf("ºó ¿ÀºêÁ§Æ® »ý¼ºµÊ\n");
@@ -40,3 +40,41 @@ void GameObject::SetRot(float x, float y, float z)
 	rot.z = z;
 }
 
+void GameObject::MawaruX()
+{
+	static float a = 0.0f;
+	a += 0.01f;
+	rot.x = a;
+}
+
+void GameObject::MawaruY()
+{
+	static float a = 0.0f;
+	a += 0.01f;
+	rot.y = a;
+}
+
+void GameObject::MawaruZ()
+{
+	static float a = 0.0f;
+	a += 0.01f;
+	rot.z = a;
+}
+
+void GameObject::CheckBase()
+{
+	if (RUNAMM->GetMyKeyState('X') > 0)
+		MawaruX();
+	if (RUNAMM->GetMyKeyState('Y') > 0)
+		MawaruY();
+	if (RUNAMM->GetMyKeyState('Z') > 0)
+		MawaruZ();
+	if (RUNAMM->GetMyKeyState('C') > 0) {
+		SetRot(0.0f, 0.0f, 0.0f);
+	}
+}
+
+void GameObject::Update()
+{
+	//CheckBase();
+}

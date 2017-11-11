@@ -44,6 +44,9 @@ public:
 	void PrepareRender();
 	void SetData();
 
+	//콜라이더 화면 출력용
+	GLuint colVertexArrayID;
+
 	void Render();	//화면을 새로 그림
 	void DrawScene();
 	void ReshapeView(GLsizei w, GLsizei h);

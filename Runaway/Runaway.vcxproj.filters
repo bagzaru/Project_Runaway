@@ -123,6 +123,9 @@
     <ClInclude Include="StarManager.h">
       <Filter>GameScene\Stars</Filter>
     </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Framework\Object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -203,6 +206,9 @@
     </ClCompile>
     <ClCompile Include="StarManager.cpp">
       <Filter>GameScene\Stars</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Framework\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

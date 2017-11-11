@@ -189,6 +189,8 @@ void GraphicManager::SetData()
 	MatrixID = mProgram->GetUniformLocation("MVP");
 	textureUniformID = mProgram->GetUniformLocation("myTexture");
 	uiUniformID = mUIProgram->GetUniformLocation("myTexture");
+
+	
 }
 
 void GraphicManager::ReshapeView(GLsizei w, GLsizei h)

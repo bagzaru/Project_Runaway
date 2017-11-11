@@ -272,6 +272,7 @@ int WindowManager::MainLoop()
 		//메시지가 없다면 렌더링 진행
 		RUNAMM->UpdateKeyState();	
 		RUNAMM->UpdateFPS();
+		RUNASCENEM->currentScene->Collide();
 		RUNASCENEM->currentScene->Update();
 		CM->Update();
 		RUNAGLM->Render();

@@ -19,5 +19,8 @@ public:
 	void MoveFB(int wtg);
 	void MoveLR(int wtg);
 
+	//콜라이더 사용시 선언
+	Collider* myCollider;
+	void OnCollision(GameObject* ano);
 };
 

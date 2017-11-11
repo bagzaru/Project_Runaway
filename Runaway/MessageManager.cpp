@@ -184,8 +184,8 @@ void MessageManager::OnMouseMove(WPARAM wParam, LPARAM lParam)
 		}
 
 
-		//CM->FPSCameraRot(mouseX, mouseY);
-		CM->FPSCameraRotY(mouseY);
+		CM->FPSCameraRot(mouseX, mouseY);
+		//CM->FPSCameraRotY(mouseY);
 	}
 }
 

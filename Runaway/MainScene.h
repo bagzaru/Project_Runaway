@@ -16,6 +16,7 @@ class MainScene :
 
 
 	StarManager* bgStars;
+	StarManager* bgStars2;
 	Model* whiteStar;
 public:
 	MainScene();

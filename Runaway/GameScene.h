@@ -15,7 +15,7 @@ public:
 	StarManager* bgStars;
 	Player* character;
 	BoardManager* boardManager;
-	
+
 public:
 	GameScene();
 	~GameScene();

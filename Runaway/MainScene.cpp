@@ -28,6 +28,14 @@ MainScene::MainScene()
 		bgStars->SetRandomPos(j);
 		PushBackGameObject(bgStars->stars[j]);
 	}
+	bgStars2 = new StarManager();
+	bgStars2->p = NULL;
+	PushBackGameObject(bgStars2);
+	for (int j = 0; j < bgStars2->starcount; j++) {
+		bgStars2->stars[j] = new GameObject(whiteStar);
+		bgStars2->SetRandomPos(j);
+		PushBackGameObject(bgStars2->stars[j]);
+	}
 
 }
 
